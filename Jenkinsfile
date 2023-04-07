@@ -21,7 +21,7 @@ pipeline {
         }   
 stage('Docker build and Push') {
           steps {
-            withRegistry([registryUrl: CredentialsId: "docker-hubs"]) {
+            withRegistry([CredentialsId: "docker-hubs", url: ""]) {
               sh 'printenv'
               sh 'docker build -t etamarah/numeric-app:""$GIT_COMMIT"".'
               sh 'docker push etamarah/numeric-app:""$GIT_COMMIT""'
