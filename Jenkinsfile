@@ -22,8 +22,8 @@ pipeline {
 stage('Docker build and Push') {
             steps {
               sh 'printenv'
-              sh 'docker build -t tamarah/numeric-app:""$GIT_commit'
-              sh 'docker push tamarah/numeric-app:""GIT_COMMIT'
+              sh 'docker build -t tamarah/numeric-app:""$GIT_COMMIT""'
+              sh 'docker push tamarah/numeric-app:""GIT_COMMIT""'
             }
       }   
     }
